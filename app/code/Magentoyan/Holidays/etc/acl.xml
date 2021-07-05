@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+
+                <resource id="Magentoyan_Base::parent">
+
+                    <resource id="Magentoyan_Holidays::grid" title="Holiday Title" sortOrder="15" >
+                        <resource id="Magentoyan_Holidays::add_row" title="Add" sortOrder="0" />
+                        <resource id="Magentoyan_Holidays::grid_list" title="List" sortOrder="100" />
+                        <resource id="Magentoyan_Holidays::row_data_delete" title="Delete" sortOrder="110" />
+                        <resource id="Magentoyan_Holidays::save" title="Save" sortOrder="120" />
+                    </resource>
+
+                </resource>
+
+            </resource>
+        </resources>
+    </acl>
+</config>

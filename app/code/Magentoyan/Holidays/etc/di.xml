@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/** Grid di xml
+ * @category  Magentoyan
+ * @package   Magentoyan_Holidays
+ * @author    Magentoyan
+ * @copyright Copyright (c) 2010-2017 Magentoyan Software Private Limited (https://magentoyan.com)
+ * @license   https://store.magentoyan.com/license.html
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magentoyan\Holidays\Api\Data\GridInterface" type="Magentoyan\Holidays\Model\Grid" />
+
+<!--    <virtualType name="Magentoyan\Holidays\Model\ResourceModel\Grid\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magentoyan_msgqueue_data</argument>
+            <argument name="resourceModel" xsi:type="string">Magentoyan\Holidays\Model\ResourceModel\Grid</argument>
+        </arguments>
+    </virtualType>-->
+    
+<!--    majidian-->
+    <type name="Magentoyan\Holidays\Model\ResourceModel\Grid\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">holiday_title</argument>
+            <argument name="eventPrefix" xsi:type="string">magentoyanco_records_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">magentoyan_holidays_data_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Magentoyan\Holidays\Model\ResourceModel\Grid</argument>
+        </arguments>
+    </type>
+<!--    majidian end-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="holiday_listing_data_source" xsi:type="string">Magentoyan\Holidays\Model\ResourceModel\Grid\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+   
+</config>
